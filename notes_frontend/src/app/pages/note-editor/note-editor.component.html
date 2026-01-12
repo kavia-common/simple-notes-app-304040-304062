@@ -1,0 +1,53 @@
+<div class="page">
+  <header class="banner">
+    <div class="banner-inner">
+      <div>
+        <h1 class="headline">{{ mode === 'create' ? 'Create note' : 'Edit note' }}</h1>
+        <p class="subhead">Title is required. Content supports plain text/markdown.</p>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn ghost" type="button" (click)="onCancel()">Cancel</button>
+        <button class="btn primary" type="button" (click)="onSave()">Save</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <form class="card" (ngSubmit)="onSave()">
+      <div class="field">
+        <label for="title">Title<span class="req">*</span></label>
+        <input
+          id="title"
+          type="text"
+          placeholder="e.g. Project ideas"
+          [formControl]="titleCtrl"
+          autocomplete="off"
+        />
+        <div class="error" *ngIf="titleCtrl.touched && titleCtrl.invalid">
+          Title is required (max 120 characters).
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          rows="10"
+          placeholder="Write your note here..."
+          formControlName="content"
+        ></textarea>
+      </div>
+
+      <div class="field">
+        <label for="tags">Tags <span class="hint">(comma-separated)</span></label>
+        <input id="tags" type="text" placeholder="work, personal, ideas" formControlName="tags" />
+      </div>
+
+      <div class="footer">
+        <button class="btn ghost" type="button" (click)="onCancel()">Cancel</button>
+        <button class="btn primary" type="submit">Save</button>
+      </div>
+    </form>
+  </main>
+</div>

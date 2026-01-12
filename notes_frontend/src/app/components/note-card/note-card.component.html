@@ -1,0 +1,23 @@
+<article class="card">
+  <header class="card-header">
+    <h3 class="title" [title]="note.title">{{ note.title }}</h3>
+    <div class="meta">
+      <span class="meta-item">Updated: {{ updatedLabel }}</span>
+      <span class="dot">•</span>
+      <span class="meta-item">Created: {{ createdLabel }}</span>
+    </div>
+  </header>
+
+  <div class="content">
+    <p class="preview">{{ preview }}</p>
+
+    <div class="tags" *ngIf="note.tags?.length">
+      <span class="tag" *ngFor="let t of note.tags">{{ t }}</span>
+    </div>
+  </div>
+
+  <footer class="actions">
+    <button class="btn ghost" type="button" (click)="onEdit()">Edit</button>
+    <button class="btn danger" type="button" (click)="onDelete()">Delete</button>
+  </footer>
+</article>

@@ -1,0 +1,100 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 50;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: translateY(0);
+  animation: pop 140ms ease-out;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.header {
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(249, 250, 251, 1));
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.body {
+  padding: 16px 18px;
+}
+
+.message {
+  margin: 0;
+  color: rgba(17, 24, 39, 0.78);
+  line-height: 1.45;
+}
+
+.actions {
+  padding: 14px 18px 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: rgba(17, 24, 39, 0.16);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: rgba(17, 24, 39, 0.04);
+  transform: translateY(-1px);
+}
+
+.btn.danger {
+  background: var(--error);
+}

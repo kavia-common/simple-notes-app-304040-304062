@@ -1,0 +1,23 @@
+<div class="backdrop" *ngIf="open" (click)="onCancel()">
+  <div class="dialog" role="dialog" aria-modal="true" (click)="$event.stopPropagation()">
+    <div class="header">
+      <h3 class="title">{{ title }}</h3>
+    </div>
+
+    <div class="body">
+      <p class="message">{{ message }}</p>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" type="button" (click)="onCancel()">{{ cancelText }}</button>
+      <button
+        class="btn"
+        [class.danger]="danger"
+        type="button"
+        (click)="onConfirm()"
+      >
+        {{ confirmText }}
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="page">
+  <header class="banner">
+    <div class="banner-inner">
+      <div>
+        <h1 class="headline">Notes</h1>
+        <p class="subhead">Capture ideas quickly. Edit anytime. Stored locally in your browser.</p>
+      </div>
+
+      <button class="btn primary" type="button" (click)="goCreate()">Add Note</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <app-notes-list [notes]="notes" (edit)="onEdit($event)" (delete)="onDeleteRequested($event)" />
+  </main>
+
+  <button class="fab" type="button" aria-label="Add note" (click)="goCreate()">+</button>
+
+  <app-confirm-dialog
+    [open]="confirmOpen"
+    title="Delete note?"
+    message="This action cannot be undone."
+    confirmText="Delete"
+    cancelText="Cancel"
+    [danger]="true"
+    (confirmed)="onDeleteConfirmed()"
+    (cancelled)="onDeleteCancelled()"
+  />
+</div>

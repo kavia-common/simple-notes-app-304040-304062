@@ -1,0 +1,142 @@
+.page {
+  min-height: 100vh;
+}
+
+.banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14), rgba(249, 250, 251, 1));
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.banner-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 26px 16px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headline {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+
+.subhead {
+  margin: 0;
+  color: rgba(17, 24, 39, 0.72);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 18px 16px 40px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.req {
+  color: var(--error);
+  margin-left: 4px;
+}
+
+.hint {
+  font-weight: 600;
+  color: rgba(17, 24, 39, 0.55);
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.16);
+  padding: 11px 12px;
+  font: inherit;
+  background: #fff;
+  transition: box-shadow 120ms ease, border-color 120ms ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 220px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.6);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.error {
+  color: var(--error);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn.primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: rgba(17, 24, 39, 0.16);
+  color: var(--text);
+}
+
+.btn.ghost:hover {
+  background: rgba(17, 24, 39, 0.04);
+}

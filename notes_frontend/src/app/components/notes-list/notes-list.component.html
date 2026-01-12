@@ -1,0 +1,13 @@
+<div class="empty" *ngIf="notes.length === 0">
+  <h2>No notes yet</h2>
+  <p>Create your first note to get started.</p>
+</div>
+
+<section class="grid" *ngIf="notes.length > 0" aria-label="Notes list">
+  <app-note-card
+    *ngFor="let n of notes"
+    [note]="n"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  />
+</section>
